@@ -25,9 +25,9 @@ public class Hotel {
 
     public void addConferencetoConferenceList(Conference conference) {
         this.conferenceList.add(conference);
-        this.conferenceList.get(0).addGuest(guest);
+//        this.conferenceList.get(0).addGuest(guest);
     }
-
+}
 //    public void addDiningtoDiningList(Dining dining) {
 //        this.conferenceList.add(dining);
 //    }
