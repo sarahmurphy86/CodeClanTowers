@@ -1,4 +1,8 @@
 package roomType;
 
-public class Dining {
+public class Dining extends Room {
+
+    public Dining (int capacity){
+        super(capacity);
+    }
 }

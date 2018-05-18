@@ -22,6 +22,7 @@ public abstract class Room {
     }
 
     public void addGuest(Guest guest){
+        if (guestlist.size() < this.capacity);
         this.guestlist.add(guest);
     }
 
