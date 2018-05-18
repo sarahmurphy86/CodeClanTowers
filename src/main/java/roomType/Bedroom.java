@@ -14,7 +14,7 @@ public class Bedroom extends Room {
         return this.roomNumber;
     }
 
-    public BedroomType getroomType() {
+    public BedroomType getRoomType() {
         return this.roomType;
     }
 }
