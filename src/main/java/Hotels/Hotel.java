@@ -18,16 +18,45 @@ public class Hotel {
         this.diningList = new ArrayList<>();
     }
 
+    public int getConferenceRoomListCount() {
+        return this.conferenceList.size();
+    }
+
+    public void addConference(Conference conference) {
+        this.conferenceList.add(conference);
+    }
+
+    public int getDiningRoomListCount() {
+        return this.diningList.size();
+    }
+
+    public void addDining(Dining dining) {
+        this.diningList.add(dining);
+    }
+
+    public int getBedroomListCount() {
+        return this.bedroomList.size();
+    }
+
+    public void addBedroom(Bedroom bedroom) {
+        this.bedroomList.add(bedroom);
+    }
+
+
+
 //    public void addBedroomToBedroomList(Bedroom bedroom){
 //        this.bedroomList.add(bedroom);
 //        this.bedroomList.get(0).addGuest(guest);
 //    }
 
-    public void addConferencetoConferenceList(Conference conference) {
-        this.conferenceList.add(conference);
+
+//
+//    public void addConference(Conference conference) {
+//        this.conferenceList.add(conference);
+
 //        this.conferenceList.get(0).addGuest(guest);
     }
-}
+
 //    public void addDiningtoDiningList(Dining dining) {
 //        this.conferenceList.add(dining);
 //    }
