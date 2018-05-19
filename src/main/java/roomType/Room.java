@@ -22,9 +22,10 @@ public abstract class Room {
     }
 
     public void addGuest(Guest guest){
-        if (guestlist.size() < this.capacity);
+        if (this.guestlist.size() < this.capacity);
         this.guestlist.add(guest);
     }
+//    This addGuest method allows you to add guest if over capacity - check!
 
     public void removeGuest(Guest guest){
         this.guestlist.remove(guest);

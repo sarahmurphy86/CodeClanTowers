@@ -1,7 +1,10 @@
 package Hotels;
 
 import Guests.Guest;
-import roomType.*;
+import roomType.Bedroom;
+import roomType.Conference;
+import roomType.Dining;
+
 
 import java.util.ArrayList;
 
@@ -22,7 +25,7 @@ public class Hotel {
         return this.conferenceList.size();
     }
 
-    public void addConference(Conference conference) {
+    public void addConferenceRoom(Conference conference) {
         this.conferenceList.add(conference);
     }
 
@@ -30,7 +33,7 @@ public class Hotel {
         return this.diningList.size();
     }
 
-    public void addDining(Dining dining) {
+    public void addDiningRoom(Dining dining) {
         this.diningList.add(dining);
     }
 
@@ -42,6 +45,19 @@ public class Hotel {
         this.bedroomList.add(bedroom);
     }
 
+//    public Bedroom findRoomByNumber(int number){
+//        Bedroom foundRoom = null;
+//        for(Bedroom room : this.bedroomList){
+//            if(room.getRoomNumber() == number){
+//                foundRoom = room;
+//            }
+//        }
+//        return foundRoom;
+//    }
+//
+//    public void addGuestToRoom(int roomNumber, Guest guest1) {
+//        findRoomByNumber(roomNumber).addGuest(guest1);
+//    }
 
 
 //    public void addBedroomToBedroomList(Bedroom bedroom){

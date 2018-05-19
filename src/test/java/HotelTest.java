@@ -15,7 +15,8 @@ public class HotelTest {
     Bedroom bedroom2;
     Dining dining;
     Conference conference;
-    Guest guest;
+    Guest guest1;
+    Guest guest2;
 
     @Before
     public void before() {
@@ -23,7 +24,8 @@ public class HotelTest {
         bedroom2 = new Bedroom(2, BedroomType.SINGLE, 50.00);
         dining = new Dining(100);
         conference = new Conference(20, "The Dunbar Room", 150.00);
-        guest = new Guest("Brad Pitt");
+        guest1 = new Guest("Brad Pitt");
+        guest2 = new Guest("Ryan Gosling");
         hotel = new Hotel();
     }
 
@@ -34,22 +36,43 @@ public class HotelTest {
 
     @Test
     public void canAddConferenceRoom() {
-        hotel.addConference(conference);
+        hotel.addConferenceRoom(conference);
         assertEquals(1, hotel.getConferenceRoomListCount());
     }
 
     @Test
     public void canAddDiningRoom() {
-        hotel.addDining(dining);
+        hotel.addDiningRoom(dining);
         assertEquals(1, hotel.getDiningRoomListCount());
     }
 
     @Test
-    public void canAddBedroom() {
+    public void canAddBedrooms() {
         hotel.addBedroom(bedroom1);
-        hotel.addBedroom(bedroom);
+        hotel.addBedroom(bedroom2);
         assertEquals(2, hotel.getBedroomListCount());
     }
 
+    @Test
+    public void canAddGuestToConference(){
+        hotel.addConferenceRoom(conference);
+        conference.addGuest(guest1);
+        assertEquals(1, conference.getGuestListCount());
+    }
 
+    @Test
+    public void canAddGuestsToDiningRoomAndRemove(){
+        hotel.addDiningRoom(dining);
+        dining.addGuest(guest1);
+        dining.addGuest(guest2);
+        dining.removeGuest(guest1);
+        assertEquals(1, dining.getGuestListCount());
+    }
+
+   @Test
+    public void canAddGuestToBedroom2(){
+       hotel.addBedroom(bedroom1);
+       hotel.addBedroom(bedroom2);
+
+   }
 }
