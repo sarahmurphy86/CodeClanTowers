@@ -55,12 +55,13 @@ public class BedroomTest {
     }
 
 //    @Test
-//    public void canNotAddGuestsOverCapacity(){
-//        bedroom.addGuest(guest);
-//        bedroom.addGuest(guest);
-//        bedroom.addGuest(guest);
+//    public void cantGoOverCapacity() {
+//        for (int i = 0; i < 3; i++) {
+//            bedroom.addGuest(guest);
+//        }
 //        assertEquals(2, bedroom.getGuestListCount());
 //    }
+
 //This test returns 3 not 2 - if statement must be incorrect- to check!
 }
 

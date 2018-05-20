@@ -12,16 +12,15 @@ public class Hotel {
     private ArrayList<Bedroom> bedroomList;
     private ArrayList<Conference> conferenceList;
     private ArrayList<Dining> diningList;
-    Guest guest;
-
 
     public Hotel() {
         this.bedroomList = new ArrayList<>();
         this.conferenceList = new ArrayList<>();
         this.diningList = new ArrayList<>();
+
     }
 
-    public int getConferenceRoomListCount() {
+    public int getNumberOfConferenceRooms() {
         return this.conferenceList.size();
     }
 
@@ -29,7 +28,7 @@ public class Hotel {
         this.conferenceList.add(conference);
     }
 
-    public int getDiningRoomListCount() {
+    public int getNumberOfDiningRooms() {
         return this.diningList.size();
     }
 
@@ -37,52 +36,30 @@ public class Hotel {
         this.diningList.add(dining);
     }
 
-    public int getBedroomListCount() {
+    public int getNumberOfBedrooms() {
         return this.bedroomList.size();
     }
 
     public void addBedroom(Bedroom bedroom) {
         this.bedroomList.add(bedroom);
     }
+//      I had help with the below...
+//      Find a bedroom
+//      There will be 2 bedrooms in the array called bedroomList
+//      Need to find the bedroom1 in the array - by using the room number(unique to each room)
+//      for (Type(Bedroom) name(bedroom): list(this.bedroomList)
+//      if (bedroom room number is the same as the number you are searching for
+//      Return this bedroom
 
-//    public Bedroom findRoomByNumber(int number){
-//        Bedroom foundRoom = null;
-//        for(Bedroom room : this.bedroomList){
-//            if(room.getRoomNumber() == number){
-//                foundRoom = room;
-//            }
-//        }
-//        return foundRoom;
-//    }
-//
-//    public void addGuestToRoom(int roomNumber, Guest guest1) {
-//        findRoomByNumber(roomNumber).addGuest(guest1);
-//    }
-
-
-//    public void addBedroomToBedroomList(Bedroom bedroom){
-//        this.bedroomList.add(bedroom);
-//        this.bedroomList.get(0).addGuest(guest);
-//    }
-
-
-//
-//    public void addConference(Conference conference) {
-//        this.conferenceList.add(conference);
-
-//        this.conferenceList.get(0).addGuest(guest);
+    public Bedroom findBedroomByNumber(int number){
+        Bedroom foundRoom = null;
+        for(Bedroom bedroom : this.bedroomList){
+            if(bedroom.getRoomNumber() == number){
+                foundRoom = bedroom;
+            }
+        }
+        return foundRoom;
     }
 
-//    public void addDiningtoDiningList(Dining dining) {
-//        this.conferenceList.add(dining);
-//    }
-//
-//        this.conferenceList.get(0).addGuest(guest);
-//    }
-//
-//    public void addGuest(Guest guest){
-//        this.conferenceList.add(guest);
-//    }
-//
-///
-//
+
+    }

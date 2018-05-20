@@ -31,27 +31,29 @@ public class HotelTest {
 
     @Test
     public void hasNoConferenceRooms() {
-        assertEquals(0, hotel.getConferenceRoomListCount());
+        assertEquals(0, hotel.getNumberOfConferenceRooms());
     }
 
     @Test
     public void canAddConferenceRoom() {
         hotel.addConferenceRoom(conference);
-        assertEquals(1, hotel.getConferenceRoomListCount());
+        assertEquals(1, hotel.getNumberOfConferenceRooms());
     }
 
     @Test
     public void canAddDiningRoom() {
         hotel.addDiningRoom(dining);
-        assertEquals(1, hotel.getDiningRoomListCount());
+        assertEquals(1, hotel.getNumberOfDiningRooms());
     }
 
     @Test
     public void canAddBedrooms() {
         hotel.addBedroom(bedroom1);
         hotel.addBedroom(bedroom2);
-        assertEquals(2, hotel.getBedroomListCount());
+        assertEquals(2, hotel.getNumberOfBedrooms());
     }
+
+//    Or do we loop through the rooms to add them to the array?
 
     @Test
     public void canAddGuestToConference(){
@@ -65,14 +67,32 @@ public class HotelTest {
         hotel.addDiningRoom(dining);
         dining.addGuest(guest1);
         dining.addGuest(guest2);
+        assertEquals(2, dining.getGuestListCount());
         dining.removeGuest(guest1);
         assertEquals(1, dining.getGuestListCount());
     }
 
+//  Test that you can add two bedrooms into the room array and find a bedroom by the room number
+
    @Test
-    public void canAddGuestToBedroom2(){
+    public void canFindBedroomByNumber(){
        hotel.addBedroom(bedroom1);
        hotel.addBedroom(bedroom2);
+       assertEquals(bedroom1, hotel.findBedroomByNumber(12));
 
    }
+
+//  Test that you can add a guest to the bedroom using the room number
+//  Assert -Find the bedroom and add guest 1,
+//  Assert - Should be 1 guest in bedroom1
+
+    @Test
+    public void canAddGuestToBedroomByNumber(){
+        hotel.addBedroom(bedroom1);
+        hotel.addBedroom(bedroom2);
+        hotel.findBedroomByNumber(12).addGuest(guest1);
+        assertEquals(1, bedroom1.getGuestListCount());
+    }
+
+
 }
